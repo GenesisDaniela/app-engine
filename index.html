@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 {% autoescape true %}
-<html>
+<html lang="en-GB" xml:lang="en-GB">
   <head>
     <!-- [START css] -->
     <link type="text/css" rel="stylesheet" href="/bootstrap/css/bootstrap.css">
     <link type="text/css" rel="stylesheet" href="/bootstrap/css/bootstrap-responsive.css">
+    <meta name="App Engine Guestbook" content="Lo que sea" />
     <!-- [END css] -->
     <style type="text/css">
       body {
@@ -53,11 +54,11 @@
       {% for greeting in greetings %}
       <div class="row">
         {% if greeting.author %}
-          <b>{{ greeting.author.email }}
+          <strong>{{ greeting.author.email }}
             {% if user and user.user_id() == greeting.author.identity %}
               (Tú)
             {% endif %}
-          </b> wrote:
+          </strong> wrote:
         {% else %}
           Una persona anonima escribió:
         {% endif %}
